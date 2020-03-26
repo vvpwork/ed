@@ -13,20 +13,10 @@ $h-vertical-gap: 13px;
 $h-initial-opposition: 5px;
 $h-hide-distance: $h-width + $h-padding;
 
-
-body {
-  min-height: 100vh;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 @mixin line-props {
   width: 100%;
   height: $h-line-height;
-  background-color: $h-line-color; 
+  background-color: $h-line-color;
   border-radius: $h-border-radius;
   position: absolute;
   transition-property: transform, opacity;
@@ -47,7 +37,7 @@ body {
     position: relative;
   }
 
-  &:hover  &__inner {
+  &:hover &__inner {
     transform: translate(-#{$h-hide-distance}, 50%);
     opacity: $h-transition-opacity;
   }
@@ -68,7 +58,6 @@ body {
     transform: translate($h-initial-opposition, -50%);
     opacity: 1;
 
-
     &::before,
     &::after {
       @include line-props();
@@ -87,7 +76,7 @@ body {
     }
   }
 
-  &:hover  &__hidden {
+  &:hover &__hidden {
     opacity: 1;
     transform: translate(0, -50%);
   }
@@ -116,11 +105,10 @@ body {
   &__hidden {
     opacity: 0;
     @include line-props();
-    
+
     background-color: $h-hover-line-color;
     top: 50%;
     transform: translate(#{$h-hide-distance}, -50%);
-    
 
     &::before,
     &::after {
@@ -139,15 +127,22 @@ body {
       top: $h-vertical-gap;
     }
   }
-  
+
   @media (max-width: 680px) {
-  
-    
-  
-    &__hidden::before,
-     &__hidden::after {
+    &__inner {
+      display: none;
+    }
+
+    &__hidden {
+      &::before,
+      &::after {
+        opacity: 1;
+        background-color: white;
+        transform: translate(0, 0);
+      }
       opacity: 1;
-      transform: translate(0, 0);
+      background-color: white;
+      transform: translate(0, -50%);
     }
   }
 }
