@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import BurgerButton from '../BurgerButton'
-import s from  './Style.module.scss';
+import { Link } from "react-router-dom";
+import T from "prop-types";
 
-const Menu = ({ menuArr }) => {
+import MenuArr from "../../configs/menu";
+import BurgerButton from "../BurgerButton";
+import s from "./style.module.scss";
+
+const Menu = ({ menuArr = MenuArr }) => {
   const [checked, setChecked] = useState(false);
-  console.log(s.hamburger)
   const onChange = () => {
     setChecked(!checked);
   };
@@ -18,27 +21,24 @@ const Menu = ({ menuArr }) => {
           {...{ onChange, checked }}
         />
         <label className={s.hamburger} htmlFor="hamburger">
-          <BurgerButton {...{checked}}/>
+          <BurgerButton {...{ checked }} />
         </label>
         <section className={s.drawerList}>
           <ul>
-            <li>
-              <a href="/">dashboard</a>
-            </li>
-            <li>
-              <a href="/">notifications</a>
-            </li>
-            <li>
-              <a href="/">system administration</a>
-            </li>
-            <li>
-              <a href="/">support</a>
-            </li>
+            {menuArr.map(({ to, name }) => (
+              <li key={name + to}>
+                <Link to={to}>{name}</Link>
+              </li>
+            ))}
           </ul>
         </section>
       </div>
     </>
   );
+};
+
+Menu.propTypes = {
+  menuArr: T.arrayOf(T.object).isRequired
 };
 
 export default Menu;
