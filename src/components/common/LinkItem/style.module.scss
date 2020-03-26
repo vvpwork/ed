@@ -1,0 +1,38 @@
+@import "style/variable.scss";
+.container {
+  width: 100%;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  text-align: center;
+  .link {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    width: auto;
+    text-decoration: none;
+    color: $text;
+    text-align: center;
+    font-size: calc(24px - 0.5vw);
+    transition: transform 500ms;
+    @media (min-width: 768px) {
+      padding: 2 rem;
+      font-size: 36px;
+    }
+    &:after {
+      content: attr(data-hover);
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: -100%;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .link:hover,
+  .link:focus {
+    transform: translateY(110%);
+    touch-action: none;
+  }
+}

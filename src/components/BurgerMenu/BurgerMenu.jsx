@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import T from "prop-types";
 
-import MenuArr from "../../configs/menu";
+import MenuArr from "configs/menu";
+import Link from "../common/LinkItem";
 import BurgerButton from "../BurgerButton";
 import s from "./style.module.scss";
 
@@ -23,22 +23,20 @@ const Menu = ({ menuArr = MenuArr }) => {
         <label className={s.hamburger} htmlFor="hamburger">
           <BurgerButton {...{ checked }} />
         </label>
-        <section className={s.drawerList}>
+        <nav className={s.drawerList}>
           <ul>
             {menuArr.map(({ to, name }) => (
-              <li key={name + to}>
-                <Link to={to}>{name}</Link>
-              </li>
+              <Link {...{ to, name }} key={to + name} />
             ))}
           </ul>
-        </section>
+        </nav>
       </div>
     </>
   );
 };
 
 Menu.propTypes = {
-  menuArr: T.arrayOf(T.object).isRequired
+  menuArr: T.arrayOf(T.object)
 };
 
 export default Menu;
