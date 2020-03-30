@@ -2,8 +2,9 @@ import React from "react";
 // import ReactDOM from "react-dom";
 import { render } from "react-snapshot";
 import { BrowserRouter, Route } from "react-router-dom";
-import App from "./App";
+import App from "./components/APP";
 import * as serviceWorker from "./serviceWorker";
+import './style/index.scss'
 
 render(
   <React.StrictMode>

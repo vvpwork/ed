@@ -17,24 +17,22 @@ const Menu = ({ menuArr = MenuArr }) => {
   };
   return (
     <>
-      <div>
-        <input
-          id="hamburger"
-          className={s.hamburger}
-          type="checkbox"
-          {...{ onChange, checked }}
-        />
-        <label className={s.hamburger} htmlFor="hamburger">
-          <BurgerButton {...{ checked }} />
-        </label>
-        <nav className={s.drawerList}>
-          <ul>
-            {menuArr.map(({ to, name }) => (
-              <Link {...{ to, name }} key={to + name} onClick={onChange} />
-            ))}
-          </ul>
-        </nav>
-      </div>
+      <input
+        id="hamburger"
+        className={s.hamburger}
+        type="checkbox"
+        {...{ onChange, checked }}
+      />
+      <label className={s.hamburger} htmlFor="hamburger">
+        <BurgerButton {...{ checked }} />
+      </label>
+      <nav className={s.drawerList}>
+        <ul>
+          {menuArr.map(({ to, name }) => (
+            <Link {...{ to, name }} key={to + name} onClick={onChange} />
+          ))}
+        </ul>
+      </nav>
     </>
   );
 };

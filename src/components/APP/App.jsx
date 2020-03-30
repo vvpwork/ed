@@ -1,20 +1,20 @@
 import React from "react";
-import Menu from "./components/BurgerMenu";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 // pages
-import HomePage from "./pages/HomePage";
-import GraphicPage from "pages/GraphicPage";
-import WebPage from "./pages/WebPage";
-import ErrorPage from "./pages/ErrorPage";
+import HomePage from "../../pages/HomePage";
+import GraphicPage from "../../pages/GraphicPage";
+import WebPage from "../../pages/WebPage";
+import ErrorPage from "../../pages/ErrorPage";
 
-import R from "./configs/routes";
-import "./style/index.scss";
+import R from "../../configs/routes";
+import Header from "../Header";
+import s from './style.module.scss'
 
 function App() {
   return (
-    <div className="App">
-      <Menu />
+    <div className={s.container}>
+      <Header />
       <Switch>
         <Route exact path={R.HOME} component={HomePage} />
         <Route path={R.GRAPHIC} component={GraphicPage} />
