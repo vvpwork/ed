@@ -3,10 +3,10 @@ import T from "prop-types";
 import { Link } from "react-router-dom";
 import s from "./style.module.scss";
 
-const LinkItem = ({ to = "/", name = "name" }) => {
+const LinkItem = ({ to = "/", name = "name", onClick = () => {} }) => {
   return (
-    <li className={s.container} >
-      <Link {...{ to }} data-hover={name} className={s.link}>
+    <li className={s.container}>
+      <Link {...{ to }} data-hover={name} className={s.link} {...{ onClick }}>
         {name}
       </Link>
     </li>
@@ -15,7 +15,8 @@ const LinkItem = ({ to = "/", name = "name" }) => {
 
 Link.propTypes = {
   to: T.string.isRequired,
-  name: T.string
+  name: T.string,
+  onClick: T.func
 };
 
 export default LinkItem;

@@ -1,9 +1,11 @@
+@import "style/variable.scss";
+
 $h-padding: 15px;
 $h-width: 36px;
 $h-height: 24px;
 $h-background-color: transparent;
 $h-line-color: #fff;
-$h-hover-line-color: red;
+$h-hover-line-color: $mainViolet;
 $h-line-height: 2px;
 $h-border-radius: 4px;
 $h-transition-time: 0.4s;
