@@ -8,8 +8,12 @@ import s from "./style.module.scss";
 
 const Menu = ({ menuArr = MenuArr }) => {
   const [checked, setChecked] = useState(false);
+  const width = window.innerWidth;
+  console.log(width);
   const onChange = () => {
-    setChecked(!checked);
+    width > 680
+      ? setChecked(!checked)
+      : setTimeout(() => setChecked(!checked), 500);
   };
   return (
     <>
@@ -26,7 +30,7 @@ const Menu = ({ menuArr = MenuArr }) => {
         <nav className={s.drawerList}>
           <ul>
             {menuArr.map(({ to, name }) => (
-              <Link {...{ to, name }} key={to + name} />
+              <Link {...{ to, name }} key={to + name} onClick={onChange} />
             ))}
           </ul>
         </nav>

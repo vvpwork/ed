@@ -1,0 +1,47 @@
+@import "style/variable.scss";
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  width: 243px;
+  height: 49px;
+  color: $text;
+  background: $main;
+
+  &:hover {
+    color: $text;
+  }
+
+  svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  rect {
+    fill: none;
+    stroke: $text;
+    stroke-width: 1;
+    stroke-dasharray: 645, 0;
+    transition: all 0.35s linear;
+  }
+  &:hover {
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    rect {
+      stroke-width: 4;
+      stroke-dasharray: 30, 415;
+      stroke-dashoffset: 48;
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+
+  .value {
+    font-family: Futura PT;
+    font-size: 18px;
+    line-height: 60px;
+  }
+}

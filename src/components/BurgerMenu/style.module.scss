@@ -3,6 +3,7 @@
 
 .drawerList {
   position: fixed;
+  z-index: 999;
   right: 0;
   top: 0;
   height: 100vh;
@@ -14,6 +15,7 @@
   transition: width 475ms ease-out, transform 450ms ease,
     border-radius 0.8s 0.1s ease;
   border-bottom-left-radius: 100vw;
+  background: darken($main, 39%);
   @include alpha-attribute("background-color", rgba($contrast, 0.8), white);
   @media (min-width: 768px) {
     width: 100vw;
@@ -37,12 +39,6 @@
     &:last-child {
       margin-bottom: 2em;
     }
-    // a {
-    // &:hover {
-    //   cursor: pointer;
-    //   @include alpha-attribute("background-color", rgba($main, 0.5), white);
-    // }
-    // }
   }
 }
 
