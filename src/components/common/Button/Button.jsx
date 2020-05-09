@@ -7,7 +7,8 @@ const Button = ({
   type = "button",
   onClick = () => {},
   style = {},
-  isAnimate = true
+  isAnimate = true,
+  theme= 'base'
 }) => {
   return (
     <button className={s.btn} {...{ type, onClick, style }}>
@@ -22,6 +23,7 @@ const Button = ({
 };
 
 Button.propTypes = {
+  theme: T.oneOf(['base', 'white', 'yellow']),
   children: T.node,
   type: T.string,
   onClick: T.func,

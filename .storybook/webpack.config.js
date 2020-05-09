@@ -8,9 +8,11 @@ module.exports = async ({ config, mode }) => {
   // Make whatever fine-grained changes you need
   config.resolve.modules.push(path.resolve(__dirname, "../src"));
   config.module.rules.push({
-    test: /\.(ttf|woff|woff2|eot)$/,
-    use: ["file-loader"],
-    include: path.resolve(__dirname, "../")
+    test: /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/,
+    loader: require.resolve("file-loader"),
+    query: {
+      name: "static/media/[name].[hash:8].[ext]"
+    }
   });
   config.module.rules.push({
     test: /\.scss$/,

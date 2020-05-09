@@ -2,15 +2,20 @@ import React from "react";
 // import ReactDOM from "react-dom";
 import { render } from "react-snapshot";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import store from "./redux/store";
 import App from "./components/APP";
 import * as serviceWorker from "./serviceWorker";
-import './style/index.scss'
+import "./style/index.scss";
 
 render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Route component={App} />
-    </BrowserRouter>
+    <Provider {...{ store }}>
+      <BrowserRouter>
+        <Route component={App} />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

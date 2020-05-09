@@ -1,10 +1,19 @@
 
 // colors
-$main: #242424;
+$main: #141414;
 $text: #fefefe;
+$yellow: #E8B601; 
 $mainViolet: #6F55EC;
 $contrast: darken($main, 10%);
 
 
+
 // fonts
-$fontlite: 'FuturaLite', 'sans-serif'; 
+$fontLight: Futura, 'sans-serif'; 
+$font: Futura, 'sans-serif';
+
+
+// main
+$mobileWidth: 768px;
+$marginContainer: 5vw;
+$marginContent: 10vw;

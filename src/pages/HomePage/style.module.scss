@@ -1,0 +1,61 @@
+@import "../../style/variable.scss";
+
+.container {
+  position: relative;
+  box-sizing: border-box;
+  background-size: cover;
+  padding-top: 88px;
+  height: 100vh;
+
+  .imgBG {
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 576px;
+    height: 200px;
+    top: 182px;
+    left: 6vw;
+    z-index: -1;
+  }
+
+  .title {
+    font-family: $fontLight;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 80px;
+    margin-left: $marginContent;
+    color: #ffffff;
+    margin-bottom: 5vh;
+    span {
+      display: inline-block;
+      width: 100%;
+    }
+    &__after {
+      font-family: $fontLight;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 23px;
+      margin-left: $marginContent;
+      color: #ffffff;
+    }
+  }
+}
+
+
+
+@media (min-width: $mobileWidth) {
+  .container {
+    .imgBG {
+      & > img {
+        height: 80vw;
+        width: 468px;
+      }
+      transform: rotate(90deg);
+      width: 80vw;
+      right: 0;
+      left: 0;
+      margin: 0  auto ;
+    }
+  }
+}

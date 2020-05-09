@@ -9,11 +9,17 @@ import s from "./style.module.scss";
 const Menu = ({ menuArr = MenuArr }) => {
   const [checked, setChecked] = useState(false);
   const width = window.innerWidth;
-  console.log(width);
   const onChange = () => {
-    width > 680
-      ? setChecked(!checked)
-      : setTimeout(() => setChecked(!checked), 500);
+    checked
+      ? (document.body.style.overflow = "auto")
+      : (document.body.style.overflow = "hidden");
+    if (width < 768) {
+      checked
+        ? setTimeout(() => setChecked(!checked), 500)
+        : setChecked(!checked);
+    } else {
+      setChecked(!checked);
+    }
   };
   return (
     <>
@@ -38,7 +44,7 @@ const Menu = ({ menuArr = MenuArr }) => {
 };
 
 Menu.propTypes = {
-  menuArr: T.arrayOf(T.object)
+  menuArr: T.arrayOf(T.object),
 };
 
 export default Menu;
