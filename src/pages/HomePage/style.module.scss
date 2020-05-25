@@ -5,8 +5,10 @@
   box-sizing: border-box;
   background-size: cover;
   padding-top: 88px;
-  height: 100vh;
-
+  min-height: 100vh;
+  .headSection {
+    margin-bottom: 200px;
+  }
   .imgBG {
     position: absolute;
     transform: rotate(-90deg);
@@ -40,22 +42,66 @@
       color: #ffffff;
     }
   }
+  .servicesSection {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 138px;
+    .service {
+      margin-bottom: 95px;
+    }
+    .subTitle {
+      font-family: $font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 1.2;
+      width: 200px;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+  .titleSection {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #ffffff;
+  }
+  .projectSection {
+    position: relative;
+  }
 }
-
-
 
 @media (min-width: $mobileWidth) {
   .container {
     .imgBG {
-      & > img {
-        height: 80vw;
-        width: 468px;
-      }
-      transform: rotate(90deg);
+      transform: rotate(0);
       width: 80vw;
+      height: auto;
+      top: 0;
       right: 0;
       left: 0;
-      margin: 0  auto ;
+      margin: 0 auto;
+      & > img {
+        margin: 0 auto;
+      }
+    }
+    .title {
+      display: flex;
+      font-size: 64px;
+      margin: 80px auto;
+      margin-top: 93px;
+      width: 65%;
+      text-align: center;
+    }
+    .title__after {
+      display: none;
     }
   }
 }

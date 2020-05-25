@@ -21,6 +21,7 @@
   @include alpha-attribute("background-color", rgba($contrast, 0.9), white);
   @media (min-width: 768px) {
     width: 100vw;
+    padding-top: 10%;
   }
   ul {
     height: 100%;

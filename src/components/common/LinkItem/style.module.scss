@@ -38,3 +38,14 @@
     touch-action: none;
   }
 }
+
+
+@media (min-width: $mobileWidth){
+  .container{
+    .link{
+      &:after{
+        top: -118%;
+      }
+    }
+  }
+}
