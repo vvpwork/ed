@@ -3,7 +3,9 @@ import Routes from "../../configs/routes";
 import { Helmet } from "react-helmet";
 import { useHistory } from "react-router";
 import Button from "../../components/common/Button";
+import { SliderBase, SliderItem } from "../../components/SliderComponent";
 import bg from "../../assets/img/bg_home_design.png";
+import arsy from "../../assets/img/ArsyTest.png";
 
 import seo from "../../configs/seo";
 import s from "./style.module.scss";
@@ -48,11 +50,18 @@ const HomePage = () => {
         <ServiceItem path={Routes.GRAPHIC} title="Graphic design" />
         <ServiceItem path={Routes.WEB} title="Web design" />
       </section>
-      <section className={s.projectSection}> 
-        <h2 className={s.titleSection}>
-          Project
-        </h2>
-        
+      <section className={s.projectSection}>
+        <h2 className={s.titleSection}>Project</h2>
+        <div className={s.sliderContainer}>
+          <SliderBase
+           
+          >
+            <SliderItem img={arsy} path={"/"} name="Arsy" />
+            <SliderItem img={arsy} path={"/"} name="Arsy" />
+            <SliderItem img={arsy} path={"/"} name="Arsy" />
+            <SliderItem img={arsy} path={"/"} name="Arsy" />
+          </SliderBase>
+        </div>
       </section>
     </div>
   );

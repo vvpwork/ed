@@ -75,6 +75,7 @@
   }
   .projectSection {
     position: relative;
+    
   }
 }
 
@@ -102,6 +103,14 @@
     }
     .title__after {
       display: none;
+    }
+
+    .servicesSection{
+      flex-direction: row;
+      justify-content: center;
+      > :first-child{
+        margin-right: 15vw;
+      }
     }
   }
 }

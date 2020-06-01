@@ -73,3 +73,9 @@ label.hamburger {
 }
 
 
+@media (min-width:$mobileWidth) {
+  label.hamburger{
+    right: 5vw;
+  }
+}
+
